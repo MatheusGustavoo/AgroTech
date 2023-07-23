@@ -14,6 +14,7 @@ router.post(
 router.get("/", QuestionController.getAll);
 router.get("/myposts", verifyToken, QuestionController.getMyPosts);
 router.get("/:id", QuestionController.getPostById);
+router.delete("/:id", verifyToken, QuestionController.removePost);
 router.get("/:id/comments", verifyToken, QuestionController.getComments);
 router.post("/:id/comments", verifyToken, QuestionController.createComments);
 

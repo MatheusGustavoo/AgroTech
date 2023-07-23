@@ -22,7 +22,7 @@ module.exports = class QuestionController {
     //get user
     const token = getToken(req);
     const user = await getUserByToken(token);
-
+    console.log(user);
     //creat post
     const question = new Question({
       title,
@@ -130,6 +130,7 @@ module.exports = class QuestionController {
       res.status(404).json({
         message: "Post não encontrado",
       });
+      return;
     }
 
     //new comments
@@ -152,5 +153,39 @@ module.exports = class QuestionController {
         newComment,
       });
     } catch (error) {}
+  }
+  static async removePost(req, res) {
+    const id = req.params.id;
+    const questions = await Question.find({ _id: id });
+
+    //checkId
+    if (!ObjectId.isValid(id)) {
+      res.status(422).json({
+        message: "ID não encontrado",
+      });
+      return;
+    }
+    if (!questions.length || !questions) {
+      res.status(404).json({
+        message: "Post não encontrado",
+      });
+      return;
+    }
+
+    //check user
+    const token = getToken(req);
+    const user = await getUserByToken(token);
+    console.log(questions[0], user._id.toString());
+
+    if (questions[0].user._id.toString() != user._id.toString()) {
+      res.status(404).json({
+        message:
+          "Houve um problema em processar sua solicitação, tente novamente mais tarde!",
+      });
+      return;
+    }
+    console.log(id);
+    await Question.findByIdAndRemove(id);
+    res.status(200).json({ message: "Pergunta removida" });
   }
 };
