@@ -14,8 +14,8 @@ router.post(
 router.get("/", QuestionController.getAll);
 router.get("/myposts", verifyToken, QuestionController.getMyPosts);
 router.get("/:id", QuestionController.getPostById);
-router.get("/:id/comments", QuestionController.getComments);
-router.post("/:id/comments", QuestionController.createComments);
+router.get("/:id/comments", verifyToken, QuestionController.getComments);
+router.post("/:id/comments", verifyToken, QuestionController.createComments);
 
 // router.post("/:id/comments", verifyToken, QuestionController.create)
 module.exports = router;

@@ -9,7 +9,6 @@ module.exports = class QuestionController {
   static async create(req, res) {
     const { title, description, comments, status } = req.body;
     // const imagem = await req.files
-    console.log(title);
     let images = "";
 
     if (!title) {
@@ -60,7 +59,6 @@ module.exports = class QuestionController {
   static async getMyPosts(req, res) {
     const token = getToken(req);
     const user = await getUserByToken(token);
-    console.log(user.id);
     const question = await Question.find({ "user._id": user.id }).sort(
       "-createdAt"
     );

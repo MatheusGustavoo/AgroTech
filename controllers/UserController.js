@@ -105,8 +105,6 @@ module.exports = class UserController {
   }
   static async checkUser(req, res) {
     let currentUser;
-    console.log("teste");
-    console.log(req.headers.authorization);
 
     if (req.headers.authorization) {
       const token = getToken(req);
@@ -130,7 +128,6 @@ module.exports = class UserController {
   }
   static async editUser(req, res) {
     const token = getToken(req);
-    console.log(req.body);
     //console.log(token);
 
     const user = await getUserByToken(token);
