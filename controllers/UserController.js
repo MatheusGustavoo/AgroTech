@@ -110,7 +110,6 @@ module.exports = class UserController {
       const token = getToken(req);
       const decoded = jwt.verify(token, "agrotechtoken");
       currentUser = await User.findById(decoded.id);
-
       currentUser.password = undefined;
     } else {
       currentUser = null;
@@ -207,6 +206,14 @@ module.exports = class UserController {
       });
     } catch (error) {
       res.status(500).json({ message: error });
+    }
+  }
+  static async logout(req, res) {
+    try {
+      req.headers.authorization.destroy();
+      res.redirect("/");
+    } catch (error) {
+      console.log(error.message);
     }
   }
 };
