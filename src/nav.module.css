@@ -46,8 +46,9 @@
   color: #384d19;
 }
 
+.onda > svg {
+  margin-top: 58vh;
+}
 .onda {
-  width: 100%;
   position: absolute;
-  top: 35vh;
 }
