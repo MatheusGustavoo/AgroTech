@@ -1,5 +1,6 @@
 import styles from "./style/header.module.css";
 import logo from "../public/LOGO.png";
+import { SignIn } from "phosphor-react";
 export function Header() {
   return (
     <div className={styles.Header}>
@@ -11,7 +12,10 @@ export function Header() {
           <li>Nossos produtos</li>
           <li>Sobre</li>
           <li>Fale conosco</li>
-          <li>Login</li>
+
+          <li className={styles.login}>
+            login <SignIn size={18} color="#1f7354" weight="bold" />
+          </li>
         </ul>
       </div>
     </div>

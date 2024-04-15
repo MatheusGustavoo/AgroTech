@@ -1,24 +1,24 @@
 .principal {
-  height: 800px;
+  height: 50rem;
   display: flex;
   background-color: var(--back);
-  padding-left: 200px;
+  padding-left: 12.5rem;
 }
 
 .principal .fraseDiv {
-  margin-top: 80px;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
 }
 .principal .fraseDiv h1 {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: bold;
   padding: 180px 50px 90px 0px;
   color: #384d19;
   box-sizing: content-box;
 }
 .fraseDiv p {
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 500;
   padding: 0px 0px 70px 0px;
   color: #384d19;
