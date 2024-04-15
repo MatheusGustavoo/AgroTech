@@ -1,0 +1,34 @@
+.principal {
+  height: 800px;
+  display: flex;
+  background-color: var(--back);
+  padding-left: 200px;
+}
+
+.principal .fraseDiv {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+.principal .fraseDiv h1 {
+  font-size: 40px;
+  font-weight: bold;
+  padding: 180px 50px 90px 0px;
+  color: #384d19;
+  box-sizing: content-box;
+}
+.fraseDiv p {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0px 0px 70px 0px;
+  color: #384d19;
+}
+
+.principal .imagem {
+  flex-grow: 0;
+}
+
+.imagem img {
+  width: 50vw;
+  height: 100%;
+}

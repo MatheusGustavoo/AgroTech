@@ -1,12 +1,14 @@
 import { Header } from "./Header.jsx";
-import "./App.css";
-import { Nav } from "./Nav.jsx";
+import { Banner } from "./Banner.jsx";
+import { Divisor } from "./components/Divisor.jsx";
 
+import "./style/App.css";
 function App() {
   return (
     <>
       <Header />
-      <Nav />
+      <Banner />
+      <Divisor />
     </>
   );
 }

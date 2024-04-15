@@ -1,4 +1,4 @@
-import styles from "./header.module.css";
+import styles from "./style/header.module.css";
 import logo from "../public/LOGO.png";
 export function Header() {
   return (

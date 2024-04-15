@@ -1,0 +1,10 @@
+.onda > svg {
+  top: 0px;
+  left: 0px;
+  transform: translate(0px, 0px);
+  position: absolute;
+  top: 20rem;
+}
+.onda {
+  background-color: aqua;
+}
