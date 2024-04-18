@@ -3,9 +3,9 @@ import logo from "../public/LOGO.png";
 import { SignIn } from "phosphor-react";
 export function Header() {
   return (
-    <div className={styles.Header}>
+    <div className={`${styles.Header} div`}>
       <div className={styles.logo}>
-        <img src={logo} alt="" />
+        <img src={logo} alt="Logo AgroTech" />
       </div>
       <div>
         <ul className={styles.option}>

@@ -1,7 +1,7 @@
 import styles from "../style/divisor.module.css";
 export function Divisor() {
   return (
-    <div className={styles.onda}>
+    <div className={styles.divisor}>
       <svg
         width="100%"
         height="926.853"

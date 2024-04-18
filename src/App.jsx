@@ -1,14 +1,13 @@
+import { Dashboard } from "./Dashboard.jsx";
 import { Header } from "./Header.jsx";
-import { Banner } from "./Banner.jsx";
-import { Divisor } from "./components/Divisor.jsx";
-
+import { Home } from "./Home.jsx";
 import "./style/App.css";
 function App() {
   return (
     <>
-      <Header />
-      <Banner />
-      <Divisor />
+      <Header className="fixed" />
+      {/* <Home /> */}
+      <Dashboard />
     </>
   );
 }

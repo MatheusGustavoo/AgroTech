@@ -82,28 +82,9 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  text-decoration: none;
 }
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
+
 ol,
 ul {
   list-style: none;
@@ -125,10 +106,9 @@ table {
 }
 
 * {
+  font-size: 1rem;
   font-family: "DM Sans", Arial, Helvetica, sans-serif;
-
   box-sizing: border-box;
-  font-family: "DM Sans", Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -137,6 +117,14 @@ table {
   --verde-logo-escuro: #11402f;
   --verde-frase-claro: #79a637;
   --verde-frase-escuro: #455955;
-  --azul-claro: #58736e;
+  --azul-claro: #b1e6dc;
   --back: #f2f1e9;
+}
+
+.div {
+  padding-left: 200px;
+  padding-right: 200px;
+}
+.fixed {
+  position: fixed;
 }

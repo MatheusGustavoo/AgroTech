@@ -1,0 +1,78 @@
+.dashboard {
+  padding-top: 5rem;
+  display: flex;
+}
+
+.dashboard nav {
+  width: 20rem;
+  /* height: 40rem; */
+  background-color: #268c67;
+}
+
+.dashboard nav .user {
+  background-color: #2d7b5e;
+  padding: auto;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--azul-claro);
+}
+
+.dashboard nav .user h1 {
+  text-align: center;
+  padding-bottom: 1rem;
+
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.dashboard nav .user span {
+  letter-spacing: 0.03rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  font-family: "Roboto", system-ui, -apple-system;
+}
+
+.dashboard nav .user img {
+  padding: 1rem 0 1rem;
+  box-sizing: initial;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.dashboard nav .user footer {
+  margin: 1rem auto 0;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.dashboard nav .user footer button {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 2rem;
+
+  border-radius: 10px;
+  background-color: var(--azul-claro);
+  border: none;
+  font-family: "DM sans", system-ui, -apple-system;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--verde-frase-escuro);
+  border: 2px solid var(--verde-frase-claro);
+}
+
+.dashboard nav ul li {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem 1rem;
+  height: max-content;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,33 +1,47 @@
 .principal {
   width: 100%;
   height: 50rem;
+  max-height: 40rem;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--back);
-  padding-left: 12.5rem;
+  margin: auto;
+  flex-wrap: wrap;
 }
 
 .principal .fraseDiv {
-  width: 50vw;
+  max-width: 100%;
+  height: 100%;
+  margin: auto;
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
+  padding-bottom: 4rem;
+  background-color: aqua;
 }
 .principal .fraseDiv h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  padding: 180px 50px 90px 0px;
+  padding: 180px 0px 90px 0px;
   color: #384d19;
   box-sizing: content-box;
 }
-.fraseDiv p {
+.principal .fraseDiv p {
   font-size: 1.2rem;
   font-weight: 500;
   padding: 0px 0px 70px 0px;
   color: #384d19;
+  max-width: 40rem;
 }
 
 .principal .imagem {
-  max-width: 50vw;
-  background-color: antiquewhite;
-  max-height: 100%;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.principal .imagem img {
+  width: 100%;
+  height: 100%;
 }
