@@ -128,3 +128,9 @@ table {
 .fixed {
   position: fixed;
 }
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 75%;
+  }
+}

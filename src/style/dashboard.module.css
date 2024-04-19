@@ -1,14 +1,13 @@
 .dashboard {
-  padding-top: 5rem;
+  padding-top: 4rem;
   display: flex;
-  min-height: 200rem;
+  /* min-height: 200rem; */
   background-color: var(--back);
 }
 
 .dashboard nav {
-  width: 15rem;
-  margin-right: 10rem;
-  max-height: 26.3rem;
+  /* width: 20rem; */
+  margin-right: 5rem;
   background-color: #268c67;
 }
 
@@ -50,6 +49,7 @@
 
 .dashboard nav .user footer {
   margin: 1rem auto 0;
+  padding: 0 1rem 0;
   align-items: center;
   justify-content: center;
 }
@@ -63,16 +63,18 @@
   border: none;
   font-family: "DM sans", system-ui, -apple-system;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   color: white;
   box-shadow: 0px 0px 10px var(--verde-logo-claro);
   border: 2px solid var(--azul-claro);
+  width: 100%;
+  white-space: nowrap;
 }
 
 .dashboard nav ul li {
   font-size: 1rem;
   font-weight: 300;
-  padding: 1rem 1rem;
+  padding: 1rem 2rem;
   height: max-content;
   color: white;
   display: flex;
