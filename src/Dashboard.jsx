@@ -14,20 +14,20 @@ export function Dashboard() {
           <footer>
             <button>
               EDITAR PERFIL
-              <PencilLine size={16} color="#1f7354" />
+              <PencilLine size={16} color="#b1e6dc" />
             </button>
           </footer>
         </div>
         <ul>
           <li>
             Meu perfil
-            <ArrowLeft size={22} weight="bold" />
+            <ArrowLeft size={18} weight="bold" />
           </li>
           <li>
-            Estatisticas <ArrowLeft size={22} weight="bold" />
+            Estatisticas <ArrowLeft size={18} weight="bold" />
           </li>
           <li>
-            Configuração <ArrowLeft size={22} weight="bold" />
+            Configuração <ArrowLeft size={18} weight="bold" />
           </li>
         </ul>
       </nav>
