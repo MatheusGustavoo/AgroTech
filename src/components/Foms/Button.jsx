@@ -1,16 +1,20 @@
-export function Button(valor) {
+export function Button(valor, { ...props }) {
   return (
     <button
+      type="submit"
       style={{
-        backgroundColor: valor.bcor,
         border: "none",
         width: "130px",
-        height: "40px",
+        // height: "40px",
         borderRadius: "20px",
         color: valor.cor,
         textAlign: "center",
         cursor: "pointer",
+        marginBottom: "10rem",
+        padding: "0.5rem",
+        boxSizing: "content-box",
       }}
+      {...props}
     >
       {valor.frase}
     </button>

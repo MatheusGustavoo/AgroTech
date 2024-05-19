@@ -1,8 +1,8 @@
-import styles from "./style/dashboard.module.css";
+import styles from "../../style/dashboard.module.css";
 import { Posts } from "./Posts";
-import { Noticias } from "./Noticias";
+// import { Noticias } from "./Noticias";
 import { PencilLine, ArrowLeft } from "phosphor-react";
-import * as React from "react";
+// import * as React from "react";
 
 export function Dashboard() {
   return (

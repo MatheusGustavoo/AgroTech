@@ -1,4 +1,4 @@
-import styles from "../style/divisor.module.css";
+import styles from "../../style/divisor.module.css";
 export function Divisor() {
   return (
     <div className={styles.divisor}>

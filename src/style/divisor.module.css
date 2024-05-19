@@ -1,7 +1,40 @@
 .divisor > svg {
-  top: 0px;
-  left: 0px;
-  margin-top: -35vh;
-  display: block;
-  /* min-height: 150px; */
+  top: 20rem;
+  left: 0;
+  margin-top: 12rem;
+  position: absolute;
+}
+@media (min-width: 1260px) and (max-width: 1640px) {
+  .divisor > svg {
+    top: 6rem;
+    left: 0;
+    margin-top: 15rem;
+    position: absolute;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1259px) {
+  .divisor > svg {
+    top: 2rem;
+    left: 0;
+    margin-top: 0rem;
+    position: absolute;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1259px) {
+  .divisor > svg {
+    top: 2rem;
+    left: 0;
+    margin-top: 0rem;
+    position: absolute;
+  }
+}
+@media (max-width: 767px) {
+  .divisor > svg {
+    top: 33rem;
+    left: 0;
+    margin-top: 0rem;
+    position: absolute;
+  }
 }

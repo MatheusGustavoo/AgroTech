@@ -1,47 +1,215 @@
 .principal {
+  position: relative;
   width: 100%;
-  height: 50rem;
-  max-height: 40rem;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   background-color: var(--back);
-  margin: auto;
-  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.principal button {
+  margin-top: 4rem;
+  background-color: var(--verde-logo-escuro);
+}
+
+.principal button:hover {
+  background-color: var(--verde-frase-claro);
+  border: 2px solid var(--verde-logo-escuro);
 }
 
 .principal .fraseDiv {
-  max-width: 100%;
+  width: 100%;
   height: 100%;
   margin: auto;
-  margin-top: 5rem;
   display: flex;
   flex-direction: column;
-  padding-bottom: 4rem;
-  background-color: aqua;
+  white-space: rap;
+  padding-right: 4rem;
+  padding-left: 200px;
 }
 .principal .fraseDiv h1 {
   font-size: 2.5rem;
+  width: 100%;
   font-weight: bold;
-  padding: 180px 0px 90px 0px;
   color: #384d19;
   box-sizing: content-box;
+  padding: 10rem 0 4rem 0;
 }
 .principal .fraseDiv p {
   font-size: 1.2rem;
   font-weight: 500;
-  padding: 0px 0px 70px 0px;
   color: #384d19;
   max-width: 40rem;
+  padding-bottom: 4rem;
 }
 
 .principal .imagem {
-  width: 50%;
-  height: 100%;
-  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 60rem;
+  background-image: url(../assets/background.png);
 }
 
-.principal .imagem img {
+.historia {
   width: 100%;
-  height: 100%;
+  height: max-content;
+  display: flex;
+  padding: 15rem 0rem;
+  /* background-color: rgb(172, 172, 235); */
+}
+
+.historia .frase {
+  /* background-color: antiquewhite; */
+  min-height: 100%;
+  padding-right: 4rem;
+}
+
+.historia .frase h1 {
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+  font-weight: 400;
+  color: var(--verde-frase-claro);
+}
+
+.historia .frase p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--verde-frase-escuro);
+}
+
+.historia .imagem img {
+}
+
+.cadastrar {
+  border-top: 1px solid #c4c4c4;
+  display: flex;
+  justify-content: space-between;
+  padding: 10rem 0rem 0rem 200px;
+}
+
+.cadastrar h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.025rem;
+  width: min-content;
+  white-space: nowrap;
+  color: var(--verde-logo-claro);
+  border-bottom: 3px solid var(--verde-frase-claro);
+}
+
+.cadastrar p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #8c8c87;
+  padding-top: 0.5rem;
+}
+
+.cadastrar .imagem {
+  display: flex;
+  align-items: end;
+}
+
+@media (min-width: 1260px) and (max-width: 1640px) {
+  .principal .imagem {
+    min-height: 50rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1259px) {
+  .principal {
+    flex-wrap: wrap;
+  }
+
+  .principal .fraseDiv {
+    align-items: center;
+    padding: 0;
+  }
+
+  .principal .fraseDiv h1 {
+    padding: 11rem 0 0rem 0;
+    text-align: center;
+  }
+
+  .principal .fraseDiv p {
+    text-align: center;
+    padding: 2rem 0 4rem 0;
+  }
+
+  .principal .imagem {
+    display: none;
+  }
+  .cadastrar .imagem img {
+    width: 20rem;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 60%;
+  }
+  .principal .imagem {
+    display: none;
+  }
+  .principal {
+    height: 74rem;
+    align-items: center;
+    padding-top: 20vh;
+  }
+
+  .principal .fraseDiv {
+    align-items: center;
+    padding: 0;
+  }
+
+  .principal .fraseDiv h1 {
+    text-align: center;
+  }
+
+  .principal .fraseDiv p {
+    text-align: center;
+    padding: 2rem 0 4rem 0;
+  }
+  .historia {
+    height: 74rem;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: baseline;
+  }
+  .historia .frase {
+    align-items: center;
+    min-height: 0;
+    height: 2rem;
+  }
+
+  .historia .frase {
+    padding: 10rem 2rem 0rem 2rem;
+  }
+
+  .historia .imagem {
+    width: 100%;
+    display: flex;
+    padding: 3rem 4rem 0 4rem;
+  }
+
+  .historia .imagem img {
+    height: min-content;
+    width: max-content;
+    min-width: 20%;
+  }
+
+  .cadastrar {
+    padding: 6rem 4rem;
+    height: 74rem;
+  }
+
+  .cadastrar .imagem img {
+    display: none;
+  }
 }

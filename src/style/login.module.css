@@ -1,0 +1,75 @@
+.login {
+  position: absolute;
+  top: 59px;
+  width: 100%;
+  padding: 10rem 200px 5rem 200px;
+  background-color: var(--back);
+}
+.login h1 {
+  font-size: 3rem;
+  width: 9rem;
+  font-weight: 600;
+  letter-spacing: 0.025rem;
+  white-space: nowrap;
+  color: var(--verde-logo-claro);
+  border-bottom: 4px solid var(--verde-frase-claro);
+}
+
+.login p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #8c8c87;
+  padding-top: 0.5rem;
+}
+.login form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  color: var(--verde-frase-claro);
+  width: 48%;
+  background-color: var(--back);
+}
+
+.login form label {
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 1rem 0 0.2rem 0;
+}
+
+.login form input {
+  padding: 0.5rem;
+  border: 1px solid var(--verde-frase-claro);
+  border-radius: 4px;
+  background-color: #d9d8d0;
+}
+
+.login input:focus {
+  background-color: white;
+}
+
+.login span {
+  margin-top: -0.2rem;
+  color: red;
+}
+
+.login button {
+  margin: 4rem 27.5rem;
+  background-color: var(--verde-logo-claro);
+}
+
+.login button:hover {
+  background-color: var(--verde-frase-claro);
+  border: 2px solid var(--verde-logo-escuro);
+}
+
+.login img {
+  position: absolute;
+  bottom: 0px;
+  right: 3px;
+}
+
+@media (max-width: 767px) {
+  .login {
+    padding: 3rem;
+  }
+}

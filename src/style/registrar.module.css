@@ -1,0 +1,44 @@
+.registrar form {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  color: var(--verde-frase-claro);
+}
+
+.registrar form label {
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 1rem 0 0.2rem 0;
+}
+
+.registrar form input {
+  padding: 0.5rem;
+  border: 1px solid var(--verde-frase-claro);
+  border-radius: 4px;
+  background-color: #d9d8d0;
+}
+
+.registrar input:focus {
+  background-color: white;
+}
+
+.registrar span {
+  margin-top: -0.2rem;
+  color: red;
+}
+
+.registrar button {
+  margin-top: 4rem;
+  background-color: var(--verde-logo-claro);
+}
+
+.registrar button:hover {
+  background-color: var(--verde-frase-claro);
+  border: 2px solid var(--verde-logo-escuro);
+}
+
+@media (max-width: 767px) {
+  .registrar {
+    padding: 3rem;
+  }
+}

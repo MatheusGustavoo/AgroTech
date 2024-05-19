@@ -1,5 +1,5 @@
-import styles from "./style/header.module.css";
-import logo from "../public/LOGO.png";
+import styles from "../style/header.module.css";
+import logo from "../assets/LOGO.png";
 import { SignIn } from "phosphor-react";
 import * as React from "react";
 
