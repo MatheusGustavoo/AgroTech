@@ -1,0 +1,32 @@
+.loading {
+  background: rgba(255, 255, 255, 0.7);
+
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+}
+
+.loadingAnimation {
+  color: var(--verde-logo-claro);
+  font-weight: 600;
+  font-size: 1.5rem;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: 1s linear 0s infinite alternate animado; /* Adicionamos uma animação chamada "spin" */
+}
+
+@keyframes animado {
+  from {
+    transform: translateY(5vh);
+  }
+  to {
+    transform: translateY(0); /* Rotaciona a imagem em um loop completo */
+  }
+}

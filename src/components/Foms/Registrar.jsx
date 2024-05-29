@@ -23,10 +23,11 @@ export default function Resgistrar() {
       telefone: telefone.valor,
       profissao: profissao.valor,
     });
+    console.log(usuario);
   }
   React.useEffect(() => {
     if (!usuario) return;
-    const data = rotas.registrar({ ...usuario });
+    rotas.registrar({ ...usuario });
   }, [usuario]);
 
   React.useEffect(() => {
@@ -76,14 +77,22 @@ export default function Resgistrar() {
           onBlur={telefone.validar}
         />
         <span>{telefone.error && <p>{telefone.error}</p>}</span>
+
         <label htmlFor="profissao">Profissão</label>
-        <input
+        <select
           id="profissao"
+          defaultValue="selecione"
           name="profissao"
-          type="tel"
           onChange={profissao.carregar}
-          onBlur={profissao.validar}
-        />
+        >
+          <option value="selecione" disabled>
+            Selecione
+          </option>
+          <option value="Agronomo">Engenheiro agrônomo</option>
+          <option value="Agricultor">Agricultor</option>
+          <option value="Veterinario">Veterinario</option>
+        </select>
+
         <span> {profissao.error && <p>{profissao.error}</p>}</span>
         {resError && <p>{resError}</p>}
         <Button frase="Enviar" cor="white" className={styles.button}></Button>

@@ -2,7 +2,7 @@
   position: fixed;
   background-color: var(--back);
   width: 100%;
-  z-index: 2;
+  z-index: 5;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,7 +26,8 @@
   align-items: center;
 }
 
-.option li {
+.option li,
+a {
   font-size: 1rem;
   color: var(--verde-frase-claro);
   font-weight: 300;

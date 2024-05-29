@@ -2,6 +2,7 @@ import styles from "../style/header.module.css";
 import logo from "../assets/LOGO.png";
 import { SignIn } from "phosphor-react";
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 //ui materials
 import Box from "@mui/material/Box";
@@ -29,7 +30,9 @@ export function Header() {
   return (
     <div className={`${styles.Header} div`}>
       <div className={styles.logo}>
-        <img src={logo} alt="Logo AgroTech" />
+        <Link to="/">
+          <img src={logo} alt="Logo AgroTech" />
+        </Link>
       </div>
       <div>
         <ul className={styles.option}>
@@ -122,7 +125,8 @@ export function Header() {
             </Menu>
           </div>
           <li className={styles.login}>
-            login <SignIn size={18} color="#1f7354" weight="bold" />
+            <Link to="/login">Login</Link>
+            <SignIn size={18} color="#1f7354" weight="bold" />
           </li>
         </ul>
       </div>

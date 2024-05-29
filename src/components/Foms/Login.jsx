@@ -4,8 +4,13 @@ import { Button } from "./Button";
 import imagem from "../../assets/login.png";
 import useForm from "../../Hooks/useForm";
 import useAuth from "../../Hooks/useAuth";
+import { Contexto } from "../../Hooks/UserContext.jsx";
+import { useNavigate } from "react-router-dom";
 
 export function Login() {
+  const dados = React.useContext(Contexto);
+  const navigate = useNavigate();
+
   const rotas = useAuth();
   const email = useForm();
   const senha = useForm();
@@ -17,14 +22,18 @@ export function Login() {
       email: email.valor,
       senha: senha.valor,
     });
-    console.log(usuario);
   }
-
   React.useEffect(() => {
     if (!usuario) return;
     const data = rotas.entrar({ ...usuario });
-    console.log(data);
   }, [usuario]);
+
+  React.useEffect(() => {
+    if (dados.user) {
+      navigate("/dashboard");
+      console.log(dados.user);
+    }
+  }, [dados]);
   return (
     <div className={styles.login}>
       <h1>Login</h1>

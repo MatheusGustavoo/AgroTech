@@ -1,13 +1,12 @@
-import { Check } from "phosphor-react";
 import api from "../utils/api";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+// import { Contexto } from "../Hooks/UserContext";
 
 export default function useAuth() {
   const navigate = useNavigate();
   const [usuarioAutenticado, setUsuarioAutenticado] = React.useState(null);
   const [mensagem, setMensagem] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
 
   async function registrar(user) {
     try {
@@ -16,7 +15,7 @@ export default function useAuth() {
       });
       authUser(data);
       setMensagem(data.message);
-      navigate("/dashboard");
+      navigate("/login");
     } catch (error) {
       console.log(error.response.data.message);
       return setMensagem(error.response.data.message);
@@ -26,6 +25,7 @@ export default function useAuth() {
   async function authUser(data) {
     setUsuarioAutenticado(true);
     localStorage.setItem("token", JSON.stringify(data.token));
+    window.location.reload();
   }
 
   async function entrar(user) {
@@ -34,14 +34,12 @@ export default function useAuth() {
         return res.data;
       });
       authUser(data);
-      console.log(data);
       setMensagem(data.message);
-      navigate("/dashboard");
     } catch (error) {
       console.log(error.response.data.message);
       return setMensagem(error.response.data.message);
     }
   }
 
-  return { registrar, entrar, mensagem, loading, usuarioAutenticado };
+  return { registrar, entrar, mensagem, usuarioAutenticado };
 }
