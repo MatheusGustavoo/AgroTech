@@ -10,7 +10,6 @@ export function Button(valor, { ...props }) {
         color: valor.cor,
         textAlign: "center",
         cursor: "pointer",
-        marginBottom: "10rem",
         padding: "0.5rem",
         boxSizing: "content-box",
       }}

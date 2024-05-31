@@ -105,3 +105,23 @@
   /* background-color: rgb(33, 120, 196); */
   justify-content: space-between;
 }
+
+@media (max-width: 1259px) {
+  .dashboard {
+    flex-wrap: wrap;
+  }
+  .dashboard nav {
+    margin: 0 auto;
+    width: 100%;
+    border-right: none;
+  }
+
+  .dashboard nav ul  {
+    margin: 0 auto;
+    width: max-content;
+  }
+  .dashboard main {
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+}

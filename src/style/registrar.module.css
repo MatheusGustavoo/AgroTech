@@ -29,7 +29,7 @@ select {
 }
 
 .registrar button {
-  margin-top: 4rem;
+  margin: 8rem 0;
   background-color: var(--verde-logo-claro);
 }
 
@@ -37,9 +37,14 @@ select {
   background-color: var(--verde-frase-claro);
   border: 2px solid var(--verde-logo-escuro);
 }
-
+@media (max-width: 1259px) {
+  .registrar {
+    width: 100%;
+  }
+}
 @media (max-width: 767px) {
   .registrar {
     padding: 3rem;
+    width: 100%;
   }
 }

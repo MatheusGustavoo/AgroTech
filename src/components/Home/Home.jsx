@@ -5,6 +5,8 @@ import { Button } from "../Foms/Button";
 import { Divisor } from "../Foms/Divisor";
 import historiaImg from "../../assets/historia.png";
 import login from "../../assets/login.png";
+import { Link } from "react-router-dom";
+
 export function Home() {
   return (
     <main>
@@ -13,7 +15,7 @@ export function Home() {
           <h1>O setor que promove a economia do Brasil!</h1>
           <p>
             Sua plataforma digital Agro tem tudo num só lugar: agronegócio,
-            pecuaria e mercado
+            pecuária e mercado
           </p>
           <Button
             frase="Cadastre-se"
@@ -28,7 +30,7 @@ export function Home() {
         <div className={styles.frase}>
           <h1>
             Nascemos do campo e evoluímos para atender sua fazenda de ponta a
-            ponta.
+            ponta
           </h1>
           <p>
             AgroTech é o aplicativo de gestão rural que já está presente na
@@ -45,6 +47,7 @@ export function Home() {
         <div className={styles.forms}>
           <h1>Cadastre-se</h1>
           <p>Crie sua conta gratuitamente e tenha acesso ao sistema.</p>
+          <Link to="/login">Caso ja possua conta, clique aqui</Link>
           <Registrar />
         </div>
         <div className={styles.imagem}>

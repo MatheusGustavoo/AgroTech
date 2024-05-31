@@ -41,5 +41,10 @@ export default function useAuth() {
     }
   }
 
-  return { registrar, entrar, mensagem, usuarioAutenticado };
+  async function sair(user) {
+    localStorage.removeItem("token");
+    navigate("/");
+    window.location.reload();
+  }
+  return { sair, entrar, mensagem, usuarioAutenticado };
 }

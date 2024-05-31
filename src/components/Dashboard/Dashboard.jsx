@@ -3,17 +3,19 @@ import { Posts } from "./Posts";
 import { Contexto } from "../../Hooks/UserContext.jsx";
 import Error from "../../utils/Error.jsx";
 import { Noticias } from "./Noticias";
-import { PencilLine, ArrowLeft } from "phosphor-react";
+import { PencilLine, ArrowLeft, SignOut } from "phosphor-react";
 import React from "react";
 import Loading from "../../utils/Loading.jsx";
+import useAuth from "../../Hooks/useAuth.jsx";
 
 export function Dashboard() {
+ 
+  const rotas = useAuth();
   const [paginaAtiva, setPaginaAtiva] = React.useState("posts");
   const data = React.useContext(Contexto);
   if (data.erro) return <Error error={`${data.erro}`} />;
 
   if (!data.user) return;
-  console.log(paginaAtiva);
   return (
     <div className={styles.dashboard} id="dashboard">
       {data.loading && <Loading />}
@@ -38,6 +40,9 @@ export function Dashboard() {
           </li>
           <li>
             Configuração <ArrowLeft size={18} weight="bold" />
+          </li>
+          <li onClick={rotas.sair}>
+            Sair <SignOut size={20} color="#11402f" weight="bold" />
           </li>
         </ul>
       </nav>

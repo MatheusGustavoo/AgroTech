@@ -42,28 +42,30 @@ export function Login() {
         aplicação.
       </p>
       <form onSubmit={mandarUsuario}>
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="email@email.com"
-          onChange={email.carregar}
-          onBlur={email.validar}
-        />
-        <span>{email.error && <p>{email.error}</p>}</span>
+        <div className={styles.loginForm}>
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="email@email.com"
+            onChange={email.carregar}
+            onBlur={email.validar}
+          />
+          <span>{email.error && <p>{email.error}</p>}</span>
 
-        <label htmlFor="senha">Senha</label>
-        <input
-          id="senha"
-          name="senha"
-          type="password"
-          placeholder="senha"
-          onChange={senha.carregar}
-          onBlur={senha.validar}
-        />
-        <span>{senha.error && <p>{senha.error}</p>}</span>
-        <span>{rotas.mensagem && <p>{rotas.mensagem}</p>}</span>
+          <label htmlFor="senha">Senha</label>
+          <input
+            id="senha"
+            name="senha"
+            type="password"
+            placeholder="senha"
+            onChange={senha.carregar}
+            onBlur={senha.validar}
+          />
+          <span>{senha.error && <p>{senha.error}</p>}</span>
+          <span>{rotas.mensagem && <p>{rotas.mensagem}</p>}</span>
+        </div>
         <Button frase="Enviar" cor="white" className={styles.button}></Button>
       </form>
       <img src={imagem} alt="" />

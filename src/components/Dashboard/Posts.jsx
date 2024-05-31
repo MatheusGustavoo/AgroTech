@@ -7,8 +7,8 @@ import Error from "../../utils/Error.jsx";
 
 export function Posts() {
   const [posts, setPosts] = useState();
-  const data = React.useContext(Contexto);
   const [image, setImage] = useState(null);
+  const data = React.useContext(Contexto);
   const handleImageChange = e => {
     const file = e.target.files[0];
     const reader = new FileReader();
@@ -25,7 +25,6 @@ export function Posts() {
   async function carregarPosts() {
     const fetch = await api.get("/post").then(res => res.data);
     try {
-      console.log(fetch);
       setPosts(fetch);
       return fetch;
     } catch (error) {
@@ -36,7 +35,6 @@ export function Posts() {
     carregarPosts();
   }, []);
 
-  console.log(posts);
   if (data.erro) return <Error error={`${data.erro}`} />;
   return (
     <main className={styles.main}>

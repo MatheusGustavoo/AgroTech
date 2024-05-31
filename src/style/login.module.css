@@ -1,8 +1,7 @@
 .login {
-  position: absolute;
-  top: 59px;
+  margin-top: 4.2rem;
   width: 100%;
-  padding: 10rem 200px 5rem 200px;
+  padding: 10rem 200px 20rem 200px;
   background-color: var(--back);
 }
 .login h1 {
@@ -22,12 +21,19 @@
   padding-top: 0.5rem;
 }
 .login form {
+  max-width: 50rem;
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+}
+
+.login form .loginForm {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   color: var(--verde-frase-claro);
-  width: 48%;
-  background-color: var(--back);
+  width: 100%;
+  max-width: 50rem;
 }
 
 .login form label {
@@ -53,8 +59,8 @@
 }
 
 .login button {
-  margin: 4rem 27.5rem;
   background-color: var(--verde-logo-claro);
+  margin-top: 5rem;
 }
 
 .login button:hover {
@@ -64,12 +70,38 @@
 
 .login img {
   position: absolute;
-  bottom: 0px;
+  bottom: -25px;
   right: 3px;
+}
+@media (min-width: 1641px) {
+  .login {
+    height: 56.5rem;
+  }
+}
+
+@media (max-width: 1640px) {
+  .login {
+    height: 46.5rem;
+  }
+  .login img {
+    bottom: 0px;
+    height: 50%;
+  }
+}
+
+@media (max-width: 1259px) {
+  .login {
+    height: 80vh;
+  }
+
+  .login img {
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
   .login {
-    padding: 3rem;
+    padding: 3rem 3rem;
+    height: 80vh;
   }
 }

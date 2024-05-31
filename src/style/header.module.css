@@ -7,7 +7,10 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 1px 2px #515356;
+  top: 0;
 }
+
+
 
 .logo {
   padding: 1rem 0;
@@ -29,10 +32,12 @@
 .option li,
 a {
   font-size: 1rem;
+  padding: 0;
   color: var(--verde-frase-claro);
   font-weight: 300;
   font-family: "DM sans", Arial, Helvetica, sans-serif;
 }
+
 
 .option .login {
   width: 4rem;
@@ -41,12 +46,10 @@ a {
   align-items: center;
   justify-content: space-around;
 }
-.responsive {
-  display: none;
-}
+
 @media (max-width: 1024px) {
-  .logo {
-    margin: 0 auto;
+  .Header {
+    justify-content: space-around;
   }
   .logo img {
     width: 5.4rem;

@@ -1,0 +1,37 @@
+.footer {
+  width: 100%;
+  background-color: var(--verde-logo-escuro);
+  color: white;
+  font-weight: 200;
+}
+
+.footerOption {
+  background-color: #227556;
+  padding: 2rem 12.5rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.footerOption h1 {
+  padding-bottom: 1rem;
+}
+.footerOption li {
+  padding-bottom: 0.5rem;
+}
+
+.footerAutor {
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .footerOption {
+    padding: 1rem 0;
+  }
+  .footerOption ul {
+    padding: 1rem 1rem;
+  }
+}
