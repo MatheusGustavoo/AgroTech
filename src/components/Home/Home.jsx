@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 import Registrar from "../Foms/Registrar";
 import styles from "../../style/home.module.css";
 import { Button } from "../Foms/Button";
@@ -8,6 +8,15 @@ import login from "../../assets/login.png";
 import { Link } from "react-router-dom";
 
 export function Home() {
+  // const navigate = useNavigate();
+  const cadastrarRef = React.useRef(null);
+
+  const rolarPagina = () => {
+    if (cadastrarRef.current) {
+      cadastrarRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <main>
       <div className={`${styles.principal}`}>
@@ -21,6 +30,7 @@ export function Home() {
             frase="Cadastre-se"
             bcor="var(--verde-logo-escuro)"
             cor="white"
+            onClick={rolarPagina}
           />
         </div>
         <div className={styles.imagem}>dadad </div>
@@ -43,7 +53,7 @@ export function Home() {
           <img src={historiaImg} />
         </div>
       </div>
-      <div className={`${styles.cadastrar}`}>
+      <div ref={cadastrarRef} className={`${styles.cadastrar}`} id="cadastrar">
         <div className={styles.forms}>
           <h1>Cadastre-se</h1>
           <p>Crie sua conta gratuitamente e tenha acesso ao sistema.</p>

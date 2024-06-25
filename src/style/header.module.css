@@ -10,8 +10,6 @@
   top: 0;
 }
 
-
-
 .logo {
   padding: 1rem 0;
 }
@@ -38,7 +36,6 @@ a {
   font-family: "DM sans", Arial, Helvetica, sans-serif;
 }
 
-
 .option .login {
   width: 4rem;
   height: 2rem;
@@ -49,11 +46,11 @@ a {
 
 @media (max-width: 1024px) {
   .Header {
-    justify-content: space-around;
   }
   .logo img {
     width: 5.4rem;
     height: 2rem;
+    margin-left: 0.4rem;
   }
 
   .option {

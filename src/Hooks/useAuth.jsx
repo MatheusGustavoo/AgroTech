@@ -46,5 +46,5 @@ export default function useAuth() {
     navigate("/");
     window.location.reload();
   }
-  return { sair, entrar, mensagem, usuarioAutenticado };
+  return { sair, entrar, mensagem, usuarioAutenticado, registrar };
 }

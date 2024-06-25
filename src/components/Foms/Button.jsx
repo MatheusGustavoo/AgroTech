@@ -1,6 +1,7 @@
-export function Button(valor, { ...props }) {
+export function Button(valor, onClick) {
   return (
     <button
+      onClick={onClick}
       type="submit"
       style={{
         border: "none",
@@ -13,7 +14,6 @@ export function Button(valor, { ...props }) {
         padding: "0.5rem",
         boxSizing: "content-box",
       }}
-      {...props}
     >
       {valor.frase}
     </button>

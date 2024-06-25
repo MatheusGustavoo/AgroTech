@@ -13,8 +13,12 @@ export function Dashboard() {
   const rotas = useAuth();
   const [paginaAtiva, setPaginaAtiva] = React.useState("posts");
   const data = React.useContext(Contexto);
-  if (data.erro) return <Error error={`${data.erro}`} />;
 
+
+
+
+  
+  if (data.erro) return <Error error={`${data.erro}`} />;
   if (!data.user) return;
   return (
     <div className={styles.dashboard} id="dashboard">

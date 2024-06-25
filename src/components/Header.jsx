@@ -4,7 +4,7 @@ import { SignIn, Bell } from "phosphor-react";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-
+import { Contexto } from "../Hooks/UserContext.jsx";
 //ui materials
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Box from "@mui/material/Box";
@@ -21,11 +21,13 @@ import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import Button from "@mui/material/Button";
 export function Header() {
+  const data = React.useContext(Contexto);
+  console.log();
   const local = useLocation();
   const listaHeader = React.useRef();
   const listaHeaderMobile = React.useRef();
   const headerNotificacao = React.useRef();
-  const listaHeaderMobileOption = React.useRef();
+  const listaHeaderMobilePonto = React.useRef();
 
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
@@ -43,12 +45,24 @@ export function Header() {
     if (local.pathname === "/dashboard" && windowWidth >= 1259) {
       listaHeader.current.style.display = "none";
       listaHeaderMobile.current.style.display = "none";
-      listaHeaderMobileOption.current.style.display = "none";
+      listaHeaderMobilePonto.current.style.display = "none";
       headerNotificacao.current.style.display = "initial";
     } else if (local.pathname === "/dashboard" && windowWidth < 1259) {
       headerNotificacao.current.style.display = "none";
       listaHeader.current.style.display = "none";
       listaHeaderMobile.current.style.display = "initial";
+      listaHeaderMobilePonto.current.style.display = "none";
+    } else if (local.pathname === "/" && windowWidth < 1259) {
+      headerNotificacao.current.style.display = "none";
+      listaHeader.current.style.display = "none";
+      listaHeaderMobilePonto.current.style.display = "initial";
+
+      listaHeaderMobile.current.style.display = "none";
+    } else if (local.pathname === "/" && windowWidth >= 1259) {
+      headerNotificacao.current.style.display = "none";
+      listaHeader.current.style.display = "initial";
+      listaHeaderMobile.current.style.display = "none";
+      listaHeaderMobilePonto.current.style.display = "none";
     }
     return () => {
       clearTimeout(timeoutId);
@@ -56,21 +70,23 @@ export function Header() {
     };
   }, [local.pathname, windowWidth]);
 
-  //ui functions
+
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [anchorEl2, setAnchorEl2] = React.useState(null);
+  const [ancoraElemento, setAncoraElemento] = React.useState(null);
   const open = Boolean(anchorEl);
-  const open2 = Boolean(anchorEl2);
+  const open2 = Boolean(ancoraElemento);
   const handleClick = event => {
     if (event.currentTarget.id === "demo-positioned-button") {
       setAnchorEl(event.currentTarget);
-    } else if (event.currentTarget.id === "account-menu") {
-      setAnchorEl2(event.currentTarget);
+    } else if (event.currentTarget.id === "account-menu1") {
+      setAncoraElemento(event.currentTarget);
     }
   };
   const handleClose = () => {
     setAnchorEl(null);
+    setAncoraElemento(null);
   };
+
   return (
     <div className={`${styles.Header} div`}>
       <div className={styles.logo}>
@@ -86,23 +102,27 @@ export function Header() {
             textAlign: "center",
           }}
         >
-          <Typography sx={{ minWidth: 100 }}>Contact</Typography>
-          <Typography sx={{ minWidth: 100 }}>Profile</Typography>
-          <Tooltip title="Account settings">
+          <Tooltip title="Seu perfil">
             <IconButton
               onClick={handleClick}
+              id="account-menu1"
               size="small"
               sx={{ ml: 2 }}
               aria-controls={open ? "account-menu" : undefined}
               aria-haspopup="true"
               aria-expanded={open ? "true" : undefined}
             >
-              <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+              <Avatar
+                // src="https://avatars.githubusercontent.com/u/56611686?v=4"
+                sx={{ width: 32, height: 32 }}
+              >
+                {data.user?.nome[0]}
+              </Avatar>
             </IconButton>
           </Tooltip>
         </Box>
         <Menu
-          anchorEl={anchorEl2}
+          anchorEl={ancoraElemento}
           id="account-menu"
           open={open2}
           onClose={handleClose}
@@ -136,30 +156,20 @@ export function Header() {
           transformOrigin={{ horizontal: "right", vertical: "top" }}
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         >
-          <MenuItem onClick={handleClose}>
-            <Avatar /> Profile
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Avatar /> My account
-          </MenuItem>
-          <Divider />
-          <MenuItem onClick={handleClose}>
-            <ListItemIcon>
-              <PersonAdd fontSize="small" />
-            </ListItemIcon>
-            Add another account
-          </MenuItem>
+          <MenuItem onClick={handleClose}>Meu perfil</MenuItem>
+          <MenuItem onClick={handleClose}>Estaística</MenuItem>
+
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
               <Settings fontSize="small" />
             </ListItemIcon>
-            Settings
+            Configurações
           </MenuItem>
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
               <Logout fontSize="small" />
             </ListItemIcon>
-            Logout
+            Sair
           </MenuItem>
         </Menu>
       </div>
@@ -175,7 +185,7 @@ export function Header() {
           </li>
         </ul>
       </div>
-      <div ref={listaHeaderMobileOption}>
+      <div ref={listaHeaderMobilePonto}>
         <IconButton
           aria-label="more"
           id="demo-positioned-button"

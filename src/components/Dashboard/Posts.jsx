@@ -1,20 +1,27 @@
 import React from "react";
 import api from "../../utils/api.jsx";
+// import apiImg from "../../utils/apiImg.jsx";
 import styles from "../../style/posts.module.css";
 import { Contexto } from "../../Hooks/UserContext.jsx";
 import { useState } from "react";
+import useForms from "../../Hooks/useForm";
+
 import Error from "../../utils/Error.jsx";
 
 export function Posts() {
+  const titulo = useForms();
+  const descricao = useForms();
   const [posts, setPosts] = useState();
+  const [imagePreview, setImagePreview] = useState(null);
   const [image, setImage] = useState(null);
   const data = React.useContext(Contexto);
-  const handleImageChange = e => {
+
+  const previewImagem = e => {
     const file = e.target.files[0];
     const reader = new FileReader();
-
+    setImage(e.target.files[0]);
     reader.onloadend = () => {
-      setImage(reader.result);
+      setImagePreview(reader.result);
     };
 
     if (file) {
@@ -22,20 +29,43 @@ export function Posts() {
     }
   };
 
-  async function carregarPosts() {
-    const fetch = await api.get("/post").then(res => res.data);
+  async function carregarPostsGet() {
     try {
+      const fetch = await api.get("/post").then(res => res.data);
       setPosts(fetch);
-      return fetch;
     } catch (error) {
       console.log(error);
     }
   }
+
+  async function mandarPost(event) {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append("file", image);
+    formData.append("titulo", titulo.valor);
+    formData.append("descricao", descricao.valor);
+
+    try {
+      const data = await api
+        .post("/post/novoPost", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then(res => res.data);
+
+      carregarPostsGet();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   React.useEffect(() => {
-    carregarPosts();
+    carregarPostsGet();
   }, []);
 
   if (data.erro) return <Error error={`${data.erro}`} />;
+
   return (
     <main className={styles.main}>
       <div className={styles.newPost}>
@@ -49,28 +79,47 @@ export function Posts() {
           </div>
         </div>
         <div>
-          <form>
-            <input type="text" placeholder="Titulo" />
+          <form onSubmit={mandarPost} encType="multipart/form-data">
+            <input
+              type="text"
+              placeholder="Titulo"
+              className={styles.titulo}
+              onChange={titulo.carregar}
+              onBlur={titulo.validar}
+            />
+            {titulo.error && <p className={styles.error}>{titulo.error}</p>}
             <textarea
               name="publicar"
               id="publicar"
               placeholder="Digite um comentario para sua publicação"
               className={styles.descricao}
+              onChange={descricao.carregar}
+              onBlur={descricao.validar}
             />
+            {titulo.error && <p className={styles.error}>{descricao.error}</p>}
             <div>
               <input
                 type="file"
                 accept="image/*"
-                onChange={handleImageChange}
+                onChange={previewImagem}
                 placeholder="Selecione uma imagem"
               />
-              {image && (
+              {imagePreview && (
                 <div>
                   <h2>Preview:</h2>
-                  <img src={image} alt="Preview" style={{ maxWidth: "100%" }} />
+                  <img
+                    src={imagePreview}
+                    alt="Preview"
+                    style={{
+                      maxWidth: "50vw",
+                      maxHeight: "50vh",
+                      margin: "0 auto",
+                    }}
+                  />
                 </div>
               )}
             </div>
+            <input type="submit" />
           </form>
         </div>
       </div>
@@ -83,14 +132,12 @@ export function Posts() {
                 <h2>
                   {post.nome} <span>Agritcultor</span>
                 </h2>
-                <p>Publicado há{post.updatedAt}</p>
+                <p>Publicado em {post.updatedAt.slice(0, 10)}</p>
               </div>
             </div>
             <div className={styles.contentPost}>
-              <img
-                src="https://i.pinimg.com/originals/bd/a5/be/bda5be61177acdb5fd46c3219f8b81a0.jpg"
-                alt=""
-              />
+              <h1>{post.titulo}</h1>
+              <img src={`${post.imagem}`} alt="" />
               <p className={styles.descricao}>{post.descricao}</p>
             </div>
           </div>

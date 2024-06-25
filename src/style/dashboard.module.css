@@ -107,6 +107,9 @@
 }
 
 @media (max-width: 1259px) {
+  html{
+    font-size: 80%;
+  }
   .dashboard {
     flex-wrap: wrap;
   }
