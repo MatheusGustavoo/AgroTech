@@ -41,7 +41,8 @@ export function Posts() {
   async function mandarPost(event) {
     event.preventDefault();
     const formData = new FormData();
-    formData.append("file", image);
+    formData.append("image", image);
+    formData.append("type", "file");
     formData.append("titulo", titulo.valor);
     formData.append("descricao", descricao.valor);
 
@@ -53,8 +54,8 @@ export function Posts() {
           },
         })
         .then(res => res.data);
-
       carregarPostsGet();
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }

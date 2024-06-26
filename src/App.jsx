@@ -7,6 +7,7 @@ import Footer from "./components/Footer.jsx";
 import Error from "./utils/Error.jsx";
 import { GlobalStorage } from "./Hooks/UserContext.jsx";
 import "./style/App.css";
+import { MeuPerfil } from "./components/MeuPerfil.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={< Login />} />
+          <Route path="/meuPerfil" element={< MeuPerfil />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

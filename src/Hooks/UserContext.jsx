@@ -9,12 +9,14 @@ export const GlobalStorage = ({ children }) => {
   const [user, setUser] = React.useState();
   const [loading, setLoading] = React.useState(true);
   const [erro, setErro] = React.useState();
+  const [token, setToken] = React.useState();
 
   React.useEffect(() => {
     const fetchData = async () => {
       const token = localStorage.getItem("token");
       if (token) {
         api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`;
+        setToken(`Bearer ${JSON.parse(token)}`)
         try {
           const res = await api.get("/usuario/conferirUsuario", user);
           setUser(res.data);
@@ -34,7 +36,7 @@ export const GlobalStorage = ({ children }) => {
 
   return (
     <Contexto.Provider
-      value={{ user, setUser, loading, setLoading, erro, setErro }}
+      value={{ user, setUser, loading, setLoading, erro, setErro, token }}
     >
       {children}
     </Contexto.Provider>

@@ -31,7 +31,6 @@ export function Login() {
   React.useEffect(() => {
     if (dados.user) {
       navigate("/dashboard");
-      console.log(dados.user);
     }
   }, [dados]);
   return (

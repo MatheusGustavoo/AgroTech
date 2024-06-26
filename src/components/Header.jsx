@@ -41,35 +41,25 @@ export function Header() {
     };
 
     window.addEventListener("resize", handleResize);
+    listaHeader.current.style.display = "none";
+    listaHeaderMobile.current.style.display = "none";
+    listaHeaderMobilePonto.current.style.display = "none";
+    headerNotificacao.current.style.display = "none";
 
     if (local.pathname === "/dashboard" && windowWidth >= 1259) {
-      listaHeader.current.style.display = "none";
-      listaHeaderMobile.current.style.display = "none";
-      listaHeaderMobilePonto.current.style.display = "none";
       headerNotificacao.current.style.display = "initial";
     } else if (local.pathname === "/dashboard" && windowWidth < 1259) {
-      headerNotificacao.current.style.display = "none";
-      listaHeader.current.style.display = "none";
       listaHeaderMobile.current.style.display = "initial";
-      listaHeaderMobilePonto.current.style.display = "none";
     } else if (local.pathname === "/" && windowWidth < 1259) {
-      headerNotificacao.current.style.display = "none";
-      listaHeader.current.style.display = "none";
       listaHeaderMobilePonto.current.style.display = "initial";
-
-      listaHeaderMobile.current.style.display = "none";
     } else if (local.pathname === "/" && windowWidth >= 1259) {
-      headerNotificacao.current.style.display = "none";
       listaHeader.current.style.display = "initial";
-      listaHeaderMobile.current.style.display = "none";
-      listaHeaderMobilePonto.current.style.display = "none";
     }
     return () => {
       clearTimeout(timeoutId);
       window.removeEventListener("resize", handleResize);
     };
   }, [local.pathname, windowWidth]);
-
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [ancoraElemento, setAncoraElemento] = React.useState(null);

@@ -1,0 +1,63 @@
+.meuPerfil {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  margin-top: 100px;
+  padding: 0 200px 0 200px;
+}
+
+.meuPerfil .meuConteudo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.meuPerfil .meuConteudo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.meuPerfil .user {
+  display: grid;
+  grid-template-columns: 80% 10% 10%;
+  grid-template-areas: "logo estatistica sair";
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+}
+.userNome {
+  grid-area: logo;
+  font-size: 3rem;
+  font-family: "Spectral";
+  line-height: 1;
+  font-weight: 800;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1;
+  color: var(--verde-frase-escuro);
+}
+
+.userNome:after {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--azul-claro);
+  position: absolute;
+  bottom: 0px;
+  left: -2px;
+  border-radius: 0.2rem;
+  z-index: -1;
+}
+.user a {
+  display: inline-block;
+  color: var(--verde-logo-claro);
+  width: min-content;
+}
+
+.sair {
+  grid-area: sair;
+}
+.estatistica {
+  grid-area: estatistica;
+}
