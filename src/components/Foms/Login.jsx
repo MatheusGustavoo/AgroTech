@@ -33,6 +33,7 @@ export function Login() {
       navigate("/dashboard");
     }
   }, [dados]);
+  console.log(usuario);
   return (
     <div className={styles.login}>
       <h1>Login</h1>

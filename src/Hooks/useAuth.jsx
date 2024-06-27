@@ -33,6 +33,7 @@ export default function useAuth() {
       const data = await api.post("/usuario/entrar", user).then(res => {
         return res.data;
       });
+      console.log(data);
       authUser(data);
       setMensagem(data.message);
     } catch (error) {

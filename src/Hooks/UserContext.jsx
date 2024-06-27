@@ -16,9 +16,9 @@ export const GlobalStorage = ({ children }) => {
       const token = localStorage.getItem("token");
       if (token) {
         api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`;
-        setToken(`Bearer ${JSON.parse(token)}`)
+        setToken(`Bearer ${JSON.parse(token)}`);
         try {
-          const res = await api.get("/usuario/conferirUsuario", user);
+          const res = await api.get("/usuario/conferirUsuario");
           setUser(res.data);
         } catch (error) {
           return error;
@@ -33,7 +33,7 @@ export const GlobalStorage = ({ children }) => {
     };
     fetchData();
   }, [local]);
-
+  // console.log(user);
   return (
     <Contexto.Provider
       value={{ user, setUser, loading, setLoading, erro, setErro, token }}

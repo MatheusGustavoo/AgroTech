@@ -1,7 +1,6 @@
-export function Button(valor, onClick) {
+export function Button(valor) {
   return (
     <button
-      onClick={onClick}
       type="submit"
       style={{
         border: "none",
