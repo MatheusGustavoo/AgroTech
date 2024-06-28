@@ -37,8 +37,9 @@ class controllerPost {
     });
 
     try {
-      const newPost = await post.save();
-      res.status(201).json(newPost);
+      // const newPost = await post.save();
+      // res.status(201).json(newPost);
+      console.log("Foi");
     } catch (error) {
       return res.status(500).json({ message: error });
     }
