@@ -37,9 +37,9 @@ const uploadHandler = async (req, res, next) => {
     }
 
     try {
-      // const link = await uploadToImgur(req.file.buffer);
-      console.log(req.file.buffer);
-      // req.body.imageUrl = link;
+      const link = await uploadToImgur(req.file.buffer);
+      console.log(link);
+      req.body.imageUrl = link;
       next();
     } catch (error) {
       res.status(500).json({ error: error.message });

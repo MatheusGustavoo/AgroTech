@@ -3,11 +3,11 @@ import tokenUsuario from "../helpers/tokenUsuario.js";
 class controllerPost {
   static async criarPost(req, res) {
     const { titulo, descricao, imageUrl } = req.body;
-    console.log(imageUrl);
+    
 
     const user = await tokenUsuario.verificarToken(req);
 
-    if (!(titulo || descricao || image)) {
+    if (!(titulo || descricao || imageUrl)) {
       res.status(400).json({
         message: "Preencha todos os campos",
       });
