@@ -10,6 +10,8 @@ import "./style/App.css";
 import { MeuPerfil } from "./components/MeuPerfil.jsx";
 
 function App() {
+  const apiUrl = import.meta.env.VITE_API_URL;
+  console.log(apiUrl);
   return (
     <BrowserRouter>
       <GlobalStorage>
@@ -17,8 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/login" element={< Login />} />
-          <Route path="/meuPerfil" element={< MeuPerfil />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/meuPerfil" element={<MeuPerfil />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

@@ -2,5 +2,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://api.imgur.com/3/image",
+  baseURL: import.meta.env.VITE_API_IMAGE,
 });
