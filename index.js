@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import rotasPost from "./routes/RotasPost.js";
 import rotasUsuario from "./routes/RotasUsuario.js";
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const app = express();
 
