@@ -1,8 +1,8 @@
 import multer from "multer";
 import dotenv from "dotenv";
 import admin from "firebase-admin";
+import serviceAccount from "./firebase_key.json" assert { type: "json" };
 import crypto from "crypto";
-const serviceAccount = process.env.SECRET;
 dotenv.config();
 
 admin.initializeApp({
