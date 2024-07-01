@@ -3,6 +3,7 @@
   left: 0;
   margin-top: 12rem;
   position: absolute;
+  z-index: -1;
 }
 @media (min-width: 1260px) and (max-width: 1640px) {
   .divisor > svg {

@@ -1,5 +1,7 @@
 # Agrotech
 
+**Observação**: Este projeto está atualmente em desenvolvimento. Algumas funcionalidades podem estar incompletas ou sujeitas a alterações.
+
 ## Objetivo
 
 Desenvolver um aplicativo que promova o compartilhamento de conhecimentos e a colaboração entre agricultores, oferecendo um ambiente de fórum onde os usuários possam interagir, tirar dúvidas, trocar experiências e buscar soluções para problemas relacionados às práticas agrícolas. Além disso, o aplicativo fornecerá informações técnicas e especializadas com base nas APIs da Embrapa, visando melhorar as práticas agrícolas e aumentar a produtividade no campo.

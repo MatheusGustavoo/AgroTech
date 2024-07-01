@@ -1,17 +1,17 @@
 import React from "react";
 import Registrar from "../Foms/Registrar";
 import styles from "../../style/home.module.css";
-import { Button } from "../Foms/Button";
 import { Divisor } from "../Foms/Divisor";
 import historiaImg from "../../assets/historia.png";
 import login from "../../assets/login.png";
 import { Link } from "react-router-dom";
 
 export function Home() {
-  // const navigate = useNavigate();
   const cadastrarRef = React.useRef(null);
 
-  const rolarPagina = () => {
+  const handleClick = () => {
+    console.log("matheus");
+
     if (cadastrarRef.current) {
       cadastrarRef.current.scrollIntoView({ behavior: "smooth" });
     }
@@ -26,12 +26,21 @@ export function Home() {
             Sua plataforma digital Agro tem tudo num só lugar: agronegócio,
             pecuária e mercado
           </p>
-          <Button
-            frase="Cadastre-se"
-            bcor="var(--verde-logo-escuro)"
-            cor="white"
-            onClick={rolarPagina}
-          />
+          <button
+            onClick={handleClick}
+            style={{
+              border: "none",
+              width: "130px",
+              borderRadius: "20px",
+              textAlign: "center",
+              cursor: "pointer",
+              padding: "0.5rem",
+              boxSizing: "content-box",
+              color: "white",
+            }}
+          >
+            Cadastre-se
+          </button>
         </div>
         <div className={styles.imagem}>dadad </div>
         <Divisor />

@@ -5,7 +5,6 @@ export function Button(valor) {
       style={{
         border: "none",
         width: "130px",
-        // height: "40px",
         borderRadius: "20px",
         color: valor.cor,
         textAlign: "center",

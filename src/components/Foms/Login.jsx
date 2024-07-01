@@ -6,6 +6,7 @@ import useForm from "../../Hooks/useForm";
 import useAuth from "../../Hooks/useAuth";
 import { Contexto } from "../../Hooks/UserContext.jsx";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function Login() {
   const dados = React.useContext(Contexto);
@@ -38,7 +39,12 @@ export function Login() {
       <h1>Login</h1>
       <p>
         Caso você ja tenha criado a conta, experimente o maximo da nossa
-        aplicação.
+        aplicação.{" "}
+        <Link to="/">
+          <span style={{ color: "var(--cor-primaria)" }}>
+            Caso não, crie uma clicando aqui
+          </span>
+        </Link>
       </p>
       <form onSubmit={mandarUsuario}>
         <div className={styles.loginForm}>

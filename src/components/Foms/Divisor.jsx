@@ -10,6 +10,7 @@ export function Divisor() {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         fill="none"
         version="1.1"
+        
       >
         <g id="shape-0907808a-5b07-8037-8004-319547c1130a">
           <defs></defs>
