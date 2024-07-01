@@ -5,6 +5,7 @@ import styles from "../../style/posts.module.css";
 import { Contexto } from "../../Hooks/UserContext.jsx";
 import { useState } from "react";
 import useForms from "../../Hooks/useForm";
+import { Avatar } from "@mui/material";
 
 import Error from "../../utils/Error.jsx";
 
@@ -71,7 +72,13 @@ export function Posts() {
     <main className={styles.main}>
       <div className={styles.newPost}>
         <div className={styles.userPost}>
-          <img src="https://avatars.githubusercontent.com/u/56611686?v=4" />
+          <Avatar
+            className={styles.avatar}
+            // src="https://avatars.githubusercontent.com/u/56611686?v=4"
+            sx={{ fontSize: 16, width: 32, height: 32 }}
+          >
+            {data.user?.nome[0]}
+          </Avatar>
           <div className={styles.userPostInfo}>
             <h2>
               {data.user.nome} <span>Agritcultor</span>
@@ -128,7 +135,13 @@ export function Posts() {
         posts.map(post => (
           <div className={styles.post} key={post._id}>
             <div className={styles.userPost}>
-              <img src="https://avatars.githubusercontent.com/u/56611686?v=4" />
+              <Avatar
+                className={styles.avatar}
+                // src="https://avatars.githubusercontent.com/u/56611686?v=4"
+                sx={{ fontSize: 32, width: 32, height: 32 }}
+              >
+                {post?.nome[0]}
+              </Avatar>
               <div className={styles.userPostInfo}>
                 <h2>
                   {post.nome} <span>Agritcultor</span>

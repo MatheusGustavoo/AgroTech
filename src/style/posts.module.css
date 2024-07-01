@@ -15,11 +15,9 @@
 
 .post {
   background-color: white;
-
   border-radius: 5px;
   box-sizing: border-box;
   display: flex;
-  /* flex-grow: 0; */
   flex-direction: column;
   padding: 2rem 2rem;
   margin: 5rem 0;
@@ -32,7 +30,7 @@
   padding-bottom: 1rem;
 }
 
-.post .userPost img {
+.post .userPost .avatar {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;

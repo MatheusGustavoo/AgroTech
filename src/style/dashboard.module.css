@@ -61,7 +61,7 @@
   font-family: "Roboto", system-ui, -apple-system;
 }
 
-.dashboard nav .user img {
+.dashboard nav .user .avatar {
   box-sizing: initial;
   width: 5rem;
   height: 5rem;
@@ -107,7 +107,7 @@
 }
 
 @media (max-width: 1259px) {
-  html{
+  html {
     font-size: 80%;
   }
   .dashboard {
@@ -119,7 +119,7 @@
     border-right: none;
   }
 
-  .dashboard nav ul  {
+  .dashboard nav ul {
     margin: 0 auto;
     width: max-content;
   }

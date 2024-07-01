@@ -7,17 +7,13 @@ import { PencilLine, ArrowLeft, SignOut } from "phosphor-react";
 import React from "react";
 import Loading from "../../utils/Loading.jsx";
 import useAuth from "../../Hooks/useAuth.jsx";
+import { Avatar } from "@mui/material";
 
 export function Dashboard() {
- 
   const rotas = useAuth();
   const [paginaAtiva, setPaginaAtiva] = React.useState("posts");
   const data = React.useContext(Contexto);
 
-
-
-
-  
   if (data.erro) return <Error error={`${data.erro}`} />;
   if (!data.user) return;
   return (
@@ -25,7 +21,13 @@ export function Dashboard() {
       {data.loading && <Loading />}
       <nav>
         <div className={styles.user}>
-          <img src="https://avatars.githubusercontent.com/u/56611686?v=4" />
+          <Avatar
+            className={styles.avatar}
+            // src="https://avatars.githubusercontent.com/u/56611686?v=4"
+            sx={{ fontSize: 32, width: 32, height: 32 }}
+          >
+            {data.user?.nome[0]}
+          </Avatar>
           <span>{data.user.nome}</span>
           <h1>{data.user.profissao}</h1>
           <footer>
