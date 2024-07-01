@@ -33,11 +33,19 @@ export const GlobalStorage = ({ children }) => {
     };
     fetchData();
   }, [local]);
-  // console.log(user);
+
+  const contextValue = React.useMemo(() => ({
+    user, 
+    setUser, 
+    loading, 
+    setLoading, 
+    erro, 
+    setErro, 
+    token
+  }), [user, loading, erro, token]);
+
   return (
-    <Contexto.Provider
-      value={{ user, setUser, loading, setLoading, erro, setErro, token }}
-    >
+    <Contexto.Provider value={contextValue}>
       {children}
     </Contexto.Provider>
   );
