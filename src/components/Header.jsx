@@ -12,14 +12,10 @@ import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
-import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
-import Button from "@mui/material/Button";
 export function Header() {
   const data = React.useContext(Contexto);
   console.log();
@@ -41,7 +37,7 @@ export function Header() {
     };
 
     window.addEventListener("resize", handleResize);
-    listaHeader.current.style.display = "none";
+    listaHeader.current.style.display = "initial";
     listaHeaderMobile.current.style.display = "none";
     listaHeaderMobilePonto.current.style.display = "none";
     headerNotificacao.current.style.display = "none";
@@ -55,6 +51,7 @@ export function Header() {
     } else if (local.pathname === "/" && windowWidth >= 1259) {
       listaHeader.current.style.display = "initial";
     }
+
     return () => {
       clearTimeout(timeoutId);
       window.removeEventListener("resize", handleResize);
@@ -165,9 +162,12 @@ export function Header() {
       </div>
       <div ref={listaHeader}>
         <ul className={styles.option}>
-          <li>Nossos produtos</li>
-          <li>Sobre</li>
-          <li>Fale conosco</li>
+          <li>
+            <Link to="/produtos">Nossos produtos</Link>
+          </li>
+          <li>
+            <Link to="/duvidas">Tire suas dúvidas</Link>
+          </li>
 
           <li className={styles.login}>
             <Link to="/login">Login</Link>
@@ -201,14 +201,11 @@ export function Header() {
             horizontal: "left",
           }}
         >
-          <Link to="/login">
-            <MenuItem onClick={handleClose}>Fale Conosco</MenuItem>
-          </Link>
-          <Link to="/login">
-            <MenuItem onClick={handleClose}>Sobre</MenuItem>
-          </Link>
-          <Link to="/login">
+          <Link to="/produtos">
             <MenuItem onClick={handleClose}>Nossos Produtos</MenuItem>
+          </Link>
+          <Link to="/duvidas">
+            <MenuItem onClick={handleClose}>Tire suas duvidas</MenuItem>
           </Link>
           <Link to="/login">
             <MenuItem onClick={handleClose}>

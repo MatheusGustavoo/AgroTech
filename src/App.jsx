@@ -8,6 +8,8 @@ import Error from "./utils/Error.jsx";
 import { GlobalStorage } from "./Hooks/UserContext.jsx";
 import "./style/App.css";
 import { MeuPerfil } from "./components/MeuPerfil.jsx";
+import Produtos from "./components/Produtos/Produtos.jsx";
+import Duvidas from "./components/Duvidas/Duvidas.jsx";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/meuPerfil" element={<MeuPerfil />} />
+          <Route path="/produtos" element={<Produtos />} />
+          <Route path="/duvidas" element={<Duvidas />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
