@@ -37,7 +37,9 @@ export function Login() {
   console.log(rotas.mensagem);
   return (
     <div className={styles.login}>
-      {dados.loading && <Loading />}
+      {dados.loading && (
+        <Loading mensagem="Estamos conectando ao banco de dados, aguarde" />
+      )}
       <h1>Login</h1>
       <p>
         Caso você ja tenha criado a conta, experimente o maximo da nossa
