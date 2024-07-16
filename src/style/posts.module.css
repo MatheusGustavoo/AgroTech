@@ -53,8 +53,9 @@
 }
 
 .post .userPostInfo h2 {
-  font-size: 1.115rem;
-  line-height: 0px;
+  font-size: 1.2rem;
+  letter-spacing: 0.2px;
+  font-family: var(--rob);
 }
 .post .userPostInfo span {
   font-size: 0.815rem;
@@ -68,7 +69,8 @@
 
 .contentPost h1 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   letter-spacing: 0.025rem;
   white-space: nowrap;
   color: var(--verde-logo-claro);
@@ -79,6 +81,15 @@
   height: 20rem;
   border-radius: 10px;
   object-fit: cover;
+}
+
+.contentPost p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1rem;
+  letter-spacing: 0.025rem;
+  color: black;
+  padding: 0.7rem 0;
 }
 
 .newPost .descricao {
@@ -174,4 +185,75 @@
 .error {
   padding-bottom: 1.7rem;
   color: red;
+}
+
+.enviar {
+  display: none;
+}
+
+.labelImagem {
+  display: flex;
+  align-items: center;
+  max-width: min-content;
+  white-space: nowrap;
+  background-color: var(--verde-frase-escuro);
+  border: none;
+  font-family: "DM sans", system-ui, -apple-system;
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: white;
+  box-shadow: 0px 0px 3px 1px #7e7d79;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.imgPreview {
+  min-width: 100%;
+  height: 20rem;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.rodapePost {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.rodapePost .comentarios {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 10px;
+  color: #73726e;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.rodapePost .acao {
+  background-color: var(--verde-frase-escuro);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 10px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 70%;
+  }
+  .div {
+    margin: 0;
+    padding: 0;
+  }
 }

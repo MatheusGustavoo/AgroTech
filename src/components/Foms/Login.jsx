@@ -7,11 +7,11 @@ import useAuth from "../../Hooks/useAuth";
 import { Contexto } from "../../Hooks/UserContext.jsx";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Loading from "../../utils/Loading.jsx";
 
 export function Login() {
   const dados = React.useContext(Contexto);
   const navigate = useNavigate();
-
   const rotas = useAuth();
   const email = useForm();
   const senha = useForm();
@@ -34,8 +34,10 @@ export function Login() {
       navigate("/dashboard");
     }
   }, [dados]);
+  console.log(rotas.mensagem);
   return (
     <div className={styles.login}>
+      {dados.loading && <Loading />}
       <h1>Login</h1>
       <p>
         Caso você ja tenha criado a conta, experimente o maximo da nossa

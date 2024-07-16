@@ -9,6 +9,7 @@ export default function useAuth() {
   const [mensagem, setMensagem] = React.useState(null);
 
   async function registrar(user) {
+    setMensagem("Estamos concetando com o banco de dados, aguarde");
     try {
       const data = await api.post("/usuario/registrar", user).then(res => {
         return res.data;
@@ -29,6 +30,7 @@ export default function useAuth() {
   }
 
   async function entrar(user) {
+    setMensagem("Estamos concetando com o banco de dados, aguarde");
     try {
       const data = await api.post("/usuario/entrar", user).then(res => {
         return res.data;

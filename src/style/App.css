@@ -112,6 +112,9 @@ table {
 }
 
 :root {
+  --dm: "DM Sans";
+  --mont: "Montserrat";
+  --rob: "Roboto";
   --white: #ffffff;
   --verde-logo-claro: #384d19;
   --verde-logo-escuro: #11402f;

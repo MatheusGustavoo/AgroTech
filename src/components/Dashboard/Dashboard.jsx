@@ -66,7 +66,7 @@ export function Dashboard() {
           Noticias
         </button>
         {paginaAtiva === "posts" && <Posts />}
-        {paginaAtiva === "posts" && <Noticias />}
+        {paginaAtiva === "noticias" && <Noticias />}
       </main>
     </div>
   );

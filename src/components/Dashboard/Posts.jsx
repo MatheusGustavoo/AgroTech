@@ -7,7 +7,9 @@ import { useState } from "react";
 import useForms from "../../Hooks/useForm";
 import { Avatar } from "@mui/material";
 
+import { Image, ChatText, ThumbsUp } from "phosphor-react";
 import Error from "../../utils/Error.jsx";
+import PostFocus from "./PostFocus.jsx";
 
 export function Posts() {
   const titulo = useForms();
@@ -15,6 +17,7 @@ export function Posts() {
   const [posts, setPosts] = useState();
   const [imagePreview, setImagePreview] = useState(null);
   const [image, setImage] = useState(null);
+  const [modalAtivo, setModalAtivo] = useState({ ativo: false, post: {} });
   const data = React.useContext(Contexto);
 
   const previewImagem = e => {
@@ -69,7 +72,10 @@ export function Posts() {
   if (data.erro) return <Error error={`${data.erro}`} />;
 
   return (
-    <main className={styles.main}>
+    <main
+      className={styles.main}
+      onClick={() => setModalAtivo({ ativo: false, post: "" })}
+    >
       <div className={styles.newPost}>
         <div className={styles.userPost}>
           <Avatar
@@ -106,16 +112,24 @@ export function Posts() {
             />
             {titulo.error && <p className={styles.error}>{descricao.error}</p>}
             <div>
+              <label htmlFor="enviarImagem" className={styles.labelImagem}>
+                <Image size={20} weight="bold" />
+                Adicione sua imagem
+              </label>
               <input
+                name="enviarImagem"
+                id="enviarImagem"
                 type="file"
                 accept="image/*"
                 onChange={previewImagem}
                 placeholder="Selecione uma imagem"
+                className={styles.enviar}
               />
               {imagePreview && (
                 <div>
                   <h2>Preview:</h2>
                   <img
+                    className={styles.imgPreview}
                     src={imagePreview}
                     alt="Preview"
                     style={{
@@ -151,11 +165,30 @@ export function Posts() {
             </div>
             <div className={styles.contentPost}>
               <h1>{post.titulo}</h1>
-              <img src={`${post.imagem}`} alt="" />
               <p className={styles.descricao}>{post.descricao}</p>
+              <img
+                src={`${post.imagem}`}
+                alt=""
+                onClick={e => {
+                  setModalAtivo({ ativo: true, post: post });
+
+                  e.stopPropagation();
+                }}
+              />
+            </div>
+            <div className={styles.rodapePost}>
+              <div className={styles.acao}>
+                <ThumbsUp size={20} weight="bold" />
+                <span>0</span>
+              </div>
+              <div className={styles.comentarios}>
+                <ChatText size={20} weight="bold" />
+                <span>0</span>
+              </div>
             </div>
           </div>
         ))}
+      <PostFocus post={modalAtivo} ativo={modalAtivo.ativo} />
     </main>
   );
 }

@@ -29,24 +29,24 @@ export const GlobalStorage = ({ children }) => {
         }
       } else {
         setErro("Token invalido");
+        setLoading(false);
       }
     };
     fetchData();
   }, [local]);
 
-  const contextValue = React.useMemo(() => ({
-    user, 
-    setUser, 
-    loading, 
-    setLoading, 
-    erro, 
-    setErro, 
-    token
-  }), [user, loading, erro, token]);
-
-  return (
-    <Contexto.Provider value={contextValue}>
-      {children}
-    </Contexto.Provider>
+  const contextValue = React.useMemo(
+    () => ({
+      user,
+      setUser,
+      loading,
+      setLoading,
+      erro,
+      setErro,
+      token,
+    }),
+    [user, loading, erro, token]
   );
+
+  return <Contexto.Provider value={contextValue}>{children}</Contexto.Provider>;
 };
