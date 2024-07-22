@@ -10,7 +10,6 @@ const tipos = {
 const useForms = () => {
   const [valor, mudarValor] = React.useState("");
   const [error, mudarError] = React.useState(null);
-  console.log();
   function validar({ target }) {
     if (valor === "") {
       mudarError("Preencha um valor.");

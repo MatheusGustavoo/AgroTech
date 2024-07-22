@@ -7,7 +7,6 @@ import useAuth from "../../Hooks/useAuth";
 import { Contexto } from "../../Hooks/UserContext.jsx";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Loading from "../../utils/Loading.jsx";
 
 export function Login() {
   const dados = React.useContext(Contexto);
@@ -34,49 +33,47 @@ export function Login() {
       navigate("/dashboard");
     }
   }, [dados]);
-  console.log(rotas.mensagem);
   return (
-    <div className={styles.login}>
-      {/* {dados.loading && (
-        <Loading mensagem="Estamos conectando ao banco de dados, aguarde" />
-      )} */}
-      <h1>Login</h1>
-      <p>
-        Caso você ja tenha criado a conta, experimente o maximo da nossa
-        aplicação.{" "}
-        <Link to="/">
-          <span style={{ color: "var(--cor-primaria)" }}>
-            Caso não, crie uma clicando aqui
-          </span>
-        </Link>
-      </p>
-      <form onSubmit={mandarUsuario}>
-        <div className={styles.loginForm}>
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="email@email.com"
-            onChange={email.carregar}
-            onBlur={email.validar}
-          />
-          <span>{email.error && <p>{email.error}</p>}</span>
+    <div className={styles.loginContainer}>
+      <div className={styles.login}>
+        <h1>Login</h1>
+        <p>
+          Caso você ja tenha criado a conta, experimente o maximo da nossa
+          aplicação.{" "}
+          <Link to="/">
+            <span style={{ color: "var(--cor-primaria)" }}>
+              Caso não, crie uma clicando aqui
+            </span>
+          </Link>
+        </p>
+        <form onSubmit={mandarUsuario}>
+          <div className={styles.loginForm}>
+            <label htmlFor="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="email@email.com"
+              onChange={email.carregar}
+              onBlur={email.validar}
+            />
+            <span>{email.error && <p>{email.error}</p>}</span>
 
-          <label htmlFor="senha">Senha</label>
-          <input
-            id="senha"
-            name="senha"
-            type="password"
-            placeholder="senha"
-            onChange={senha.carregar}
-            onBlur={senha.validar}
-          />
-          <span>{senha.error && <p>{senha.error}</p>}</span>
-          <span>{rotas.mensagem && <p>{rotas.mensagem}</p>}</span>
-        </div>
-        <Button frase="Enviar" cor="white" className={styles.button}></Button>
-      </form>
+            <label htmlFor="senha">Senha</label>
+            <input
+              id="senha"
+              name="senha"
+              type="password"
+              placeholder="senha"
+              onChange={senha.carregar}
+              onBlur={senha.validar}
+            />
+            <span>{senha.error && <p>{senha.error}</p>}</span>
+            <span>{rotas.mensagem && <p>{rotas.mensagem}</p>}</span>
+          </div>
+          <Button frase="Enviar" cor="white" className={styles.button}></Button>
+        </form>
+      </div>
       <img src={imagem} alt="" />
     </div>
   );

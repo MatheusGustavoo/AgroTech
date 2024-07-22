@@ -18,7 +18,6 @@ import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 export function Header() {
   const data = React.useContext(Contexto);
-  console.log();
   const local = useLocation();
   const listaHeader = React.useRef();
   const listaHeaderMobile = React.useRef();

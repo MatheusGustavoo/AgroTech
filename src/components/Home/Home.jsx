@@ -10,8 +10,6 @@ export function Home() {
   const cadastrarRef = React.useRef(null);
 
   const handleClick = () => {
-    console.log("matheus");
-
     if (cadastrarRef.current) {
       cadastrarRef.current.scrollIntoView({ behavior: "smooth" });
     }

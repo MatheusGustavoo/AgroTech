@@ -1,8 +1,12 @@
+.loginContainer {
+  height: min-content;
+  display: flex;
+  align-items: end;
+}
+
 .login {
-  margin-top: 4.2rem;
   width: 100%;
   padding: 10rem 200px 20rem 200px;
-  background-color: var(--back);
 }
 .login h1 {
   font-size: 3rem;
@@ -68,10 +72,8 @@
   border: 2px solid var(--verde-logo-escuro);
 }
 
-.login img {
-  position: absolute;
-  bottom: -25px;
-  right: 3px;
+img {
+  height: 30rem;
 }
 @media (min-width: 1641px) {
   .login {
@@ -81,27 +83,30 @@
 
 @media (max-width: 1640px) {
   .login {
-    height: 46.5rem;
+    height: 90vh;
+    padding: 10rem 2rem;
   }
-  .login img {
-    bottom: 0px;
-    height: 50%;
+  img {
+    height: 20rem;
   }
 }
 
 @media (max-width: 1259px) {
   .login {
-    height: 80vh;
+    height: 90vh;
+    padding: 10rem 1rem;
   }
-
-  .login img {
-    display: none;
+  img {
+    height: 15rem;
   }
 }
 
 @media (max-width: 767px) {
   .login {
-    padding: 3rem 3rem;
-    height: 80vh;
+    padding: 20rem 2rem;
+    height: 100vh;
+  }
+  img {
+    display: none;
   }
 }
