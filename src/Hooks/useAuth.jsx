@@ -30,7 +30,9 @@ export default function useAuth() {
   }
 
   async function entrar(user) {
-    setMensagem("Estamos concetando com o banco de dados, aguarde");
+    setMensagem(
+      "Estamos conectando voçê ao servidor, isso leva cerca de 1 minuto."
+    );
     try {
       const data = await api.post("/usuario/entrar", user).then(res => {
         return res.data;
