@@ -31,7 +31,7 @@ export default function useAuth() {
 
   async function entrar(user) {
     setMensagem(
-      "Estamos conectando voçê ao servidor, isso leva cerca de 1 minuto."
+      "Estamos conectando você ao servidor, isso leva cerca de 1 minuto."
     );
     try {
       const data = await api.post("/usuario/entrar", user).then(res => {
